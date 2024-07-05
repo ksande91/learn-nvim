@@ -1,17 +1,17 @@
-import { type ReactElement, type ReactNode } from "react";
+import { type ReactElement } from "react";
 
 export interface DashboardMenuItemProps {
   number: number;
-  path: string;
+  text: string;
 }
 
 export default function DashboardMenuItem({
   number,
-  path,
+  text,
 }: DashboardMenuItemProps): ReactElement {
   return (
     <div>
-      [<span className="text-amber-500">{number}</span>] - {path}
+      [<span className="text-amber-500">{number}</span>] - {text}
     </div>
   );
 }
