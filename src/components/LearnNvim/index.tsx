@@ -1,4 +1,4 @@
-import { type ReactElement, type ReactNode } from "react";
+import { type ReactElement } from "react";
 
 export default function LearnNvim(): ReactElement {
   return (
