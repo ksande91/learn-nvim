@@ -7,7 +7,7 @@ export default function Home() {
       <div className="w-full h-full flex-col flex justify-center items-center h-screen whitespace-pre font-mono">
         <LearnNvim />
         <div className="mt-8">
-          <DashboardMenuItem number={0} path="/quick-start.tsx" />
+          <DashboardMenuItem number={0} path="Learn the basics" />
         </div>
       </div>
     </main>
