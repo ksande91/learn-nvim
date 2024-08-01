@@ -12,10 +12,14 @@ const config: Config = {
       fontSize: {
         "vw-1": "1vw",
       },
+      colors: {
+        foreground: "rgb(var(--foreground-rgb))",
+        background: "rgb(var(--background-rgb))",
+      },
     },
   },
   plugins: [
-    plugin(function ({ addBase, theme }) {
+    plugin(function({ addBase, theme }) {
       addBase({
         h1: { fontSize: theme("fontSize.3xl") },
         h2: { fontSize: theme("fontSize.2xl") },
