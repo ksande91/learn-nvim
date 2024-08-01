@@ -4,7 +4,7 @@ import { type ReactElement } from "react";
 export interface DashboardMenuItemProps {
   number: number;
   text: string;
-  caretPosition: { x: number; y: number };
+  caretPosition: number;
 }
 
 export default function DashboardMenuItem({
@@ -12,27 +12,23 @@ export default function DashboardMenuItem({
   text,
   caretPosition,
 }: DashboardMenuItemProps): ReactElement {
-  function isMarked(index: number): boolean {
-    if (caretPosition.y !== number) return false;
-    if (caretPosition.x === index) return true;
-    return false;
-  }
+  const isMarked = (): boolean => caretPosition === number;
 
   return (
     <div>
       <span className="text-cyan-300">[</span>
-      <span className="text-amber-500">{number}</span>
+      <span
+        className="text-amber-500"
+        style={{
+          backgroundColor: isMarked() ? "white" : undefined,
+          color: isMarked() ? "black" : undefined,
+        }}
+      >
+        {number}
+      </span>
       <span className="text-cyan-300">]</span>-{" "}
       {text.split("").map((c, index) => (
-        <span
-          key={index}
-          style={{
-            backgroundColor: isMarked(index) ? "white" : undefined,
-            color: isMarked(index) ? "black" : undefined,
-          }}
-        >
-          {c}
-        </span>
+        <span key={index}>{c}</span>
       ))}
     </div>
   );

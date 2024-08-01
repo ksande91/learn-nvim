@@ -3,18 +3,42 @@ import { DashboardMenuItems } from "@/types/dashBoardMenuItem";
 
 const isKey = (key: string, event: any) => event.key === key;
 
+export function handleMenuNavigation(
+  event: KeyboardEvent,
+  caretPosition: number,
+  setCaretPosition: (index: number) => void,
+  navigate: (index: number) => void,
+) {
+  if (event.key === "Enter") {
+    navigate(caretPosition);
+  }
+
+  if (event.key === "j") {
+    if (caretPosition === 1) return; 
+    setCaretPosition(caretPosition + 1);
+  }
+
+  if (event.key === "k") {
+    if (caretPosition ===  0) return;
+    setCaretPosition(caretPosition - 1);
+  }
+}
+
 export function handleCaretNavigation(
   event: KeyboardEvent,
   caretPosition: CaretPosition,
   menu: DashboardMenuItems,
   setCaretPosition: (caretPos: CaretPosition) => void,
-  navigate: (index:number) => void,
+  navigate: (index: number) => void,
 ) {
   if (isKey("Enter", event)) {
     navigate(caretPosition.y);
   }
 
-  if (isKey("l", event) && caretPosition.x + 1 < menu[caretPosition.y].text.length) {
+  if (
+    isKey("l", event) &&
+    caretPosition.x + 1 < menu[caretPosition.y].text.length
+  ) {
     setCaretPosition({ x: caretPosition.x + 1, y: caretPosition.y });
   }
 

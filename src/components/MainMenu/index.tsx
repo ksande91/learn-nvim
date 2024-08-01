@@ -1,17 +1,13 @@
 "use client";
 import { useEffect, useState, type ReactElement } from "react";
-import { handleCaretNavigation } from "../../../utils/mainMenuHelpers";
-import { CaretPosition } from "@/types/caretPosition";
+import { handleMenuNavigation } from "../../../utils/mainMenuHelpers";
 import { DashboardMenuItems } from "@/types/dashBoardMenuItem";
 import { useRouter } from "next/navigation";
 
 import DashboardMenuItem from "../DashboardMenuItem";
 
 export default function MainMenu(): ReactElement {
-  const [caretPosition, setCaretPosition] = useState<CaretPosition>({
-    x: 0,
-    y: 0,
-  });
+  const [caretPosition, setCaretPosition] = useState<number>(0);
 
   const router = useRouter();
 
@@ -27,13 +23,7 @@ export default function MainMenu(): ReactElement {
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      handleCaretNavigation(
-        event,
-        caretPosition,
-        menu,
-        setCaretPosition,
-        navigate,
-      );
+      handleMenuNavigation(event, caretPosition, setCaretPosition, navigate);
     };
 
     window.addEventListener("keydown", handleKeyPress);

@@ -18,7 +18,12 @@ export default function Home() {
   return (
     <main>
       <div className="w-full h-full flex-col flex justify-center items-center h-screen whitespace-pre font-mono">
-        <Help open={helpOpen}>Test</Help>
+        <Help open={helpOpen}>
+          <div>Move the cursor using j or k</div>
+          <div>j=down</div>
+          <div>k=up</div>
+          <div>Enter to choose</div>
+        </Help>
         <LearnNvim />
         <div className="mt-8">
           <MainMenu />
