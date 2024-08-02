@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 import Help from "@/components/Help";
-import LearnNvim from "@/components/LearnNvim";
+import LearnNvim from "@/components/Headings/LearnNeovim";
 import MainMenu from "@/components/MainMenu";
 import useKeyPress from "@/hooks/useKeyPress";
 
