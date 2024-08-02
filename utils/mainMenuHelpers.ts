@@ -22,6 +22,14 @@ export function handleMenuNavigation(
     if (caretPosition ===  0) return;
     setCaretPosition(caretPosition - 1);
   }
+  
+  if (event.key === "0") {
+    navigate(0);
+  }
+
+  if (event.key === "1") {
+    navigate(1);
+  }
 }
 
 export function handleCaretNavigation(
