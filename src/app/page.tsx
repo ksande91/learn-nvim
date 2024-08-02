@@ -22,7 +22,7 @@ export default function Home() {
           <div>Move the cursor using j or k</div>
           <div>j=down</div>
           <div>k=up</div>
-          <div>Enter to choose</div>
+          <div>Enter or number to choose</div>
         </Help>
         <LearnNvim />
         <div className="mt-8">
