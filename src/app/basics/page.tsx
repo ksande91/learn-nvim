@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import TheBasics from "@/components/Headings/TheBasics";
 import InfoBox from "@/components/InfoBox";
+import NvimRenderer from "../../modules/editor/NvimRenderer";
 import { type ReactElement } from "react";
 
 export default function BasicsPage(): ReactElement {
@@ -15,6 +16,7 @@ export default function BasicsPage(): ReactElement {
           basics.
         </div>
       </InfoBox>
+      <NvimRenderer text={["test", "testTo"]} />
     </Container>
   );
 }
